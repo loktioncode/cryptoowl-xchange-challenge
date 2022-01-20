@@ -1,17 +1,18 @@
-import Head from 'next/head'
+import Head from './nav'
 import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+// import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 
 
 const name = 'Elisha Bere'
-export const siteTitle = 'Next.js Test Website'
+export const siteTitle = 'Cryptoowl'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div >
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,56 +28,20 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/elisha.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/elisha.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <div className={styles.backToHome}>
-          <Link href="/pages/posts/first-post">
-            <a>Go To Post</a>
-          </Link>
-        </div>
-      
-      <main>{children}</main>
 
-      
+      <header >
+      </header>
+
+
+      <main className=''>{children}</main>
+
+
       {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
+        <Link href="/">
+          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+            ← Back to home
+          </a>
+        </Link>
       )}
     </div>
   )

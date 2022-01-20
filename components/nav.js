@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
-
-export default function FirstPost() {
+export default function Header() {
+  const router = useRouter()
   return (
     <>
 
@@ -41,7 +42,9 @@ export default function FirstPost() {
                   </div>
                   <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                     <Link href="/">
-                      <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Home</a>
+                      <a href="#" class="font-medium text-gray-500 hover:text-gray-900" 
+                      color={router.pathname === '/projects' ? "blue.700": "#000000"}
+                      >Home</a>
                     </Link>
 
                     <Link href="/about">
@@ -52,7 +55,10 @@ export default function FirstPost() {
 
                     <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Contact</a>
 
+                    <Link href="/login">
                     <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
+                    </Link>
+                    
                   </div>
                 </nav>
               </div>
@@ -62,7 +68,8 @@ export default function FirstPost() {
                 <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                   <div class="px-5 pt-4 flex items-center justify-between">
                     <div>
-                      <Image layout='fill'
+                      <Image  height={30}
+                          width={80}
                         class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt=""
                       />
 

@@ -1,6 +1,19 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link'
+import Hero from '../components/Hero'
+import ShowcaseCollection from '../components/showcase'
+// import NProgress from 'nprogress'
+
+// Router.events.on('routeChangeStart', (url) => {
+//   console.log(`Loading: ${url}`)
+//   NProgress.start()
+// })
+// Router.events.on('routeChangeComplete', () => NProgress.done())
+// Router.events.on('routeChangeError', () => NProgress.done())
+
+
 
 export default function Home() {
   return (
@@ -8,13 +21,10 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hie I am a software developer</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
+      <Hero />
+      <ShowcaseCollection />
+   
+
     </Layout>
   )
 }
