@@ -2,13 +2,33 @@ import { useState, useEffect } from 'react'
 import { LockClosedIcon } from '@heroicons/react/solid'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import NftList from '../components/NftList'
 import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
+import axios from 'axios'
+
 
 export default function MetaMaskSignIn() {
     const { address, chainId, connectWallet, disconnectWallet } = useWeb3();
     const { switchNetwork } = useSwitchNetwork();
     const [email, setEmail] = useState("");
+    const [nftData, setNftData] = useState([]);
+
+  
+
+    useEffect(() => {
+
+        // Prefetch the dashboard page
+        // router.prefetch('/dashboard')
+        const getMyNfts = async () => {
+            const openseaData = await axios.get('https://testnets-api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20')
+            // alert(openseaData.data.assets)
+            setNftData(openseaData.data.assets)
+           
+        }
+       
+        return getMyNfts()
+    }, [])
+
 
     // If a wallet is connected, show disconnect and switch network options
     if (address) {
@@ -30,6 +50,8 @@ export default function MetaMaskSignIn() {
                 <button className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={disconnectWallet}>
                     Disconnect
                 </button>
+
+                <NftList nftListData={nftData} />
             </>
         )
     }
@@ -50,11 +72,6 @@ export default function MetaMaskSignIn() {
     //     })
     // }, [])
 
-    // useEffect(() => {
-    //     // Prefetch the dashboard page
-    //     // router.prefetch('/dashboard')
-    //     alert(address)
-    // }, [])
 
     return (
         <>

@@ -8,7 +8,9 @@
   "dependencies": {
     "@3rdweb/hooks": "^1.8.0",
     "@heroicons/react": "^1.0.5",
+    "axios": "^0.25.0",
     "daisyui": "^1.24.3",
+    "debug": "^4.3.3",
     "heroicons": "^1.0.5",
     "next": "latest",
     "nprogress": "^0.2.0",
