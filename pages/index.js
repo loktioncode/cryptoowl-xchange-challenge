@@ -21,8 +21,9 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Hero />
+      {/* <Hero /> */}
       <ShowcaseCollection />
+      
    
 
     </Layout>

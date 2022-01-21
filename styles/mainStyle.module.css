@@ -1,0 +1,43 @@
+.main{
+    height: 50vh;
+}
+
+.mainContent{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nftHighlight{
+    flex: 0.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nftContainer{
+    border-radius: 20px; 
+    overflow: hidden;
+    display: flex;
+    margin-right: 20px;
+}
+
+.selectedNft{
+    object-fit: contain;
+    border-radius: 20px; 
+
+}
+
+.nftDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.75;
+}
+
+.title{
+    color: rgb(39, 39, 43);
+}
+.itemNumber{
+    color: rgb(39, 39, 43);
+}

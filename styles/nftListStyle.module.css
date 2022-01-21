@@ -1,0 +1,16 @@
+.nftListStyle{
+    cursor: pointer;
+    display: flex;
+    overflow: scroll;
+    margin-top:  20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(43, 43, 43);
+    width:100%;
+   
+}
+
+.nftListStyle::-webkit-scrollbar{
+    background: transparent; 
+
+}

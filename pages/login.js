@@ -3,6 +3,8 @@ import { LockClosedIcon } from '@heroicons/react/solid'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import NftList from '../components/NftList'
+import Main from '../components/Main'
+
 import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
 import axios from 'axios'
 
@@ -22,8 +24,7 @@ export default function MetaMaskSignIn() {
         const getMyNfts = async () => {
             const openseaData = await axios.get('https://testnets-api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20')
             // alert(openseaData.data.assets)
-            setNftData(openseaData.data.assets)
-           
+            setNftData(openseaData.data.assets)  
         }
        
         return getMyNfts()
@@ -50,8 +51,9 @@ export default function MetaMaskSignIn() {
                 <button className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={disconnectWallet}>
                     Disconnect
                 </button>
-
+                <Main />
                 <NftList nftListData={nftData} />
+                
             </>
         )
     }

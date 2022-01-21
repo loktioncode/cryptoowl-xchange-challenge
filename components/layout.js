@@ -35,14 +35,7 @@ export default function Layout({ children, home }) {
 
       <main className=''>{children}</main>
 
-
-      {!home && (
-        <Link href="/">
-          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-            ← Back to home
-          </a>
-        </Link>
-      )}
+    
     </div>
   )
 }
