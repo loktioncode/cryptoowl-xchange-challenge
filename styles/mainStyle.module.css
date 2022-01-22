@@ -1,5 +1,5 @@
 .main{
-    height: 50vh;
+    height: 40vh;
 }
 
 .mainContent{
@@ -20,19 +20,21 @@
     overflow: hidden;
     display: flex;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 .selectedNft{
     object-fit: contain;
     border-radius: 20px; 
-
+    max-width: min(30vw, 40vh);
+    max-height: 30vw;
 }
 
 .nftDetails{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex: 0.75;
+    justify-content: space-between;
 }
 
 .title{
@@ -76,16 +78,16 @@
     display: flex;
     align-items: center;
     flex: 1;
+    
 }
 
 .ownerNameAndHandle{
-    color: '#00ebfe';
+    color: rgb(57, 135, 238);
 }
 
 .ownerLink{
-    padding: 12px;
+    padding: 10px;
     border-radius: 50px;
-    border: 1px solid #000;
     margin: 0 0 0 10px;
 }
 
