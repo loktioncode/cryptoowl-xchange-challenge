@@ -14,3 +14,8 @@
     background: transparent; 
 
 }
+
+.nftImage{
+    width: 400px !important;
+    height: 400px !important;
+}

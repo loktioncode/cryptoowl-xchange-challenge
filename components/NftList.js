@@ -6,20 +6,20 @@ import NftListStyle from '../styles/nftListStyle.module.css'
 
 
 const NftList = (props) => {
-
+   
     return (
 
-        <div className={ NftListStyle.nftListStyle}>
+        <div className={NftListStyle.nftListStyle}>
             {props.nftListData.length === 0 ? (
                 <Fragment>loading..</Fragment>
             ) : (
                 props.nftListData.map(nft => (
-                    <div>
-                        <CollectionCard key={nft.id} name={nft.name} id={nft.id} image={(nft.image_original_url === null) ? '/images/1.jpg' : nft.image_original_url} traits={nft.traits} />
+                    <div onClick={() => props.setSelectedNft(nft.token_id)}>
+                        <CollectionCard key={nft.id} name={nft.name} id={nft.token_id} image={(nft.image_url === null) ? '/images/1.jpg' : nft.image_url} traits={nft.traits} />
                     </div>
                 ))
 
-            ) }
+            )}
         </div>
     );
 

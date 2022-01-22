@@ -36,8 +36,60 @@
 }
 
 .title{
+    font-size: 96px;
+    font-weight: 800;
     color: rgb(39, 39, 43);
 }
 .itemNumber{
     color: rgb(39, 39, 43);
+    font-size: 72px;
+    font-weight: 400;
+    align-self: center;
+}
+
+.owner{
+    display: flex;
+    margin:10px 0;
+    height: 50px;
+}
+
+.owner > div {
+    margin: 0 5px;
+}
+
+.ownerImageContainer{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-radius: 50px;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.ownerImageContainer > img {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+.ownerDetails{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.ownerNameAndHandle{
+    color: '#00ebfe';
+}
+
+.ownerLink{
+    padding: 12px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    margin: 0 0 0 10px;
+}
+
+.ownerLink > img{
+   height: 100% !important;
+   width: 100% !important;
 }

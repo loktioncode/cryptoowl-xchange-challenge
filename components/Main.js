@@ -1,5 +1,5 @@
 
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import CollectionCard from './CollectionCard';
 import Link from 'next/link'
 import MainStyle from '../styles/mainStyle.module.css'
@@ -7,7 +7,12 @@ import Image from 'next/image'
 
 
 
-const Main = ({activeNft}) => {
+const Main = (props) => {
+    const [activeNft, setActiveNft] = useState(props.nftListData[0])
+
+    useEffect(() => {
+        setActiveNft(props.nftListData[props.selectedNft])
+    }, [props.nftListData, props.selectedNft])
 
     return (
 
@@ -17,8 +22,7 @@ const Main = ({activeNft}) => {
                     <div className={MainStyle.nftContainer}>
                         <Image
                             className={MainStyle.selectedNft}
-                            // src={activeNft.image_original_url ? '/images/assets/1.jpg' : activeNft.image_original_url} // Route of the image file
-                            src='/images/punks/2.jpg' // Route of the image file
+                            src={activeNft.image_url} // Route of the image file
                             height={200} // Desired size with correct aspect ratio
                             width={200} // Desired size with correct aspect ratio
                             alt="Your Name"
@@ -27,7 +31,7 @@ const Main = ({activeNft}) => {
 
                 </div>
                 <div className={MainStyle.nftDetails} style={{ color: '#fff' }}>
-                {/* {activeNft.name} */}
+                    {/* {activeNft.name} */}
                     <div className={MainStyle.title}>AFRO PUNK</div>
                     {/* {activeNft.id} */}
                     <span className={MainStyle.itemNumber}>#55</span>
@@ -36,7 +40,7 @@ const Main = ({activeNft}) => {
                     <div className={MainStyle.ownerImageContainer}>
                         <Image
                             className={MainStyle.selectedNft}
-                            src={'/images/assets/owner/punkhead.png'} 
+                            src={'/images/assets/owner/punkhead.png'}
                             alt="owner avatar"
                             height={70}
                             width={70}
@@ -49,7 +53,7 @@ const Main = ({activeNft}) => {
                         </div>
                         <div className={MainStyle.ownerLink}>
                             <Image
-                        
+
                                 src='/images/assets/owner/twitter.png' // Route of the image file
                                 height={40} // Desired size with correct aspect ratio
                                 width={40} // Desired size with correct aspect ratio

@@ -14,19 +14,19 @@ export default function MetaMaskSignIn() {
     const { switchNetwork } = useSwitchNetwork();
     const [email, setEmail] = useState("");
     const [nftData, setNftData] = useState([]);
+    const [selectedNft, setSelectedNft] = useState(0)
 
-  
 
     useEffect(() => {
 
         // Prefetch the dashboard page
         // router.prefetch('/dashboard')
         const getMyNfts = async () => {
-            const openseaData = await axios.get('https://testnets-api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20')
+            const openseaData = await axios.get('https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x0570408Ba92aC0F8C3a19C0890f9a3829CFf4804')
             // alert(openseaData.data.assets)
-            setNftData(openseaData.data.assets)  
+            setNftData(openseaData.data.assets)
         }
-       
+
         return getMyNfts()
     }, [])
 
@@ -51,9 +51,15 @@ export default function MetaMaskSignIn() {
                 <button className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={disconnectWallet}>
                     Disconnect
                 </button>
-                <Main />
-                <NftList nftListData={nftData} />
-                
+                {
+                    nftData.length > 0 && (
+                        <>
+                            <Main nftListData={nftData} selectedNft={selectedNft} />
+                            <NftList nftListData={nftData} setSelectedNft={setSelectedNft} />
+                        </>
+                    )
+                }
+
             </>
         )
     }
