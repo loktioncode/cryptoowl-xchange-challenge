@@ -1,42 +1,41 @@
 import { useEthers } from "@usedapp/core";
 import React, { useState } from "react";
-import { Button, useToast } from "@chakra-ui/react";
+
 
 export const MintNftButton = () => {
     const [loading, setLoading] = useState(false);
     const { account } = useEthers();
-    const toast = useToast();
+  
 
     async function mintSwordFromAPI() {
-        setLoading(true);
+        alert("minting")
+        // setLoading(true);
 
-        await fetch("/api/mint_sword", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify({
-                account,
-                type: "gold",
-            }),
-        });
+        // await fetch("/api/mint_sword", {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //         account,
+        //         type: "gold",
+        //     }),
+        // });
 
         setLoading(false);
-        toast({
-            title: "You've obtained your gold sword!",
-            description: "refresh the page to see your updated inventory.",
-        });
+       
     }
 
     return (
         <>
-            <Button
-                isDisabled={!account}
+            <button
+            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                isDisabled={account}
                 onClick={() => mintSwordFromAPI()}
                 isLoading={loading}
             >
-                Mint Gold Sword
-            </Button>
+                Mint NFT
+            </button>
         </>
     );
 };

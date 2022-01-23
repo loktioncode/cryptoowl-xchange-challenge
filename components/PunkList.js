@@ -1,53 +1,51 @@
 import { useEthers } from "@usedapp/core";
 import React, { useEffect, useState } from "react";
-import { Image, p, div, div,  } from "@chakra-ui/react";
-import { NFTLabsSDK } from "@nftlabs/sdk";
 
-export const PunkList = ({displayAccount}) => {
-    const { library } = useEthers();
-    const [PunkList, setPunkList] = useState < any > ([]);
+import axios from 'axios'
+
+export const PunkList = ({ displayAccount }) => {
+
+    const [PunkList, setPunkList] = useState([]);
 
     useEffect(() => {
-        async function fetchPunkList() {
-            if (!library) {
-                return;
-            }
-            const sdk = new NFTLabsSDK(library.getSigner());
-            const nft = sdk.getNFTModule(
-                process.env.NEXT_PUBLIC_NFT_MODULE_ADDRESS 
-            );
-            if (displayAccount) {
-                const owned = await nft.getOwned(displayAccount);
-                setPunkList(owned);
-            } else {
-                setPunkList(await nft.getAll());
-            }
+        const fetchPunkList = async () => {
+            const openseaData = await axios.get(`https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=${process.env.NEXT_PUBLIC_NFT_MODULE_ADDRESS}`)
+            // alert(openseaData.data.assets)
+            setPunkList(openseaData.data.assets)
         }
+
+
         fetchPunkList();
-    }, [library, displayAccount]);
+    }, [displayAccount]);
 
     return (
         <>
             <div>
                 {PunkList.length ? (
-                    PunkList.map((sword) => (
-                        <div key={sword.id}>
+                    PunkList.map((punk) => (
+                        <div key={punk.id}>
                             < >
                                 <div>
-                                    <Image src={sword.image} divSize="64px" />
-                                    <p >{sword.name}</p>
-                                    <p >{sword.description}</p>
+
+                                    <img
+                                        src={punk.image_url} // Route of the image file
+                                        height={200}
+                                        width={200}
+                                        alt="Nft image">
+                                    </img>
+                                    <p >{punk.name}</p>
+                                    <p >{punk.description}</p>
                                 </div>
 
                                 <div >
-                                    <pre>{JSON.stringify(sword.properties, null, 2)}</pre>
+                                    <pre>{JSON.stringify(punk.properties, null, 2)}</pre>
                                 </div>
                             </>
                         </div>
                     ))
                 ) : (
                     <>
-                        <p>No swords</p>
+                        <p>No punks</p>
                     </>
                 )}
             </div>

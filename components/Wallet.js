@@ -1,4 +1,4 @@
-import { h1, Stack, Text } from "@chakra-ui/react";
+
 // import { BigNumber } from "@ethersproject/bignumber";
 import { formatEther } from "@ethersproject/units";
 import { useEtherBalance, useEthers } from "@usedapp/core";
@@ -6,21 +6,21 @@ import React from "react";
 
 const ChainComponent= () => {
   const { chainId } = useEthers();
-  return <Text>Chain ID: {chainId ? chainId : "-"}</Text>;
+  return <p>Chain ID: {chainId ? chainId : "-"}</p>;
 };
 
 const AccountComponent= () => {
   const { account } = useEthers();
-  return <Text>Account: {account ? account : "-"}</Text>;
+  return <p>Account: {account ? account : "-"}</p>;
 };
 
 const BalanceComponent = () => {
   const { account } = useEthers();
   const balance = useEtherBalance(account);
   return (
-    <Text>
+    <p>
       Balance: Ξ{balance ? formatEther(balance) : "0.00"}
-    </Text>
+    </p>
   );
 };
 

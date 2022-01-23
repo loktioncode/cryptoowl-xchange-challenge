@@ -7,11 +7,11 @@ export default function CollectionCard({ id, name, traits, image }) {
     return (
         // apply style from styles
         <div className={collectionCard.CollectionCard}>
-        
+
             <img
-             src={image} // Route of the image file
-           className={collectionCard.nftImage}
-             alt="Nft image">
+                src={image} // Route of the image file
+                className={collectionCard.nftImage}
+                alt="Nft image">
             </img>
             <div className={collectionCard.details}>
                 <div className={collectionCard.name} >
@@ -23,7 +23,7 @@ export default function CollectionCard({ id, name, traits, image }) {
                         src='/images/assets/weth.png' // Route of the image file
                         height={30} // Desired size with correct aspect ratio
                         width={20} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="weth logo"
                     />
                     <div className={collectionCard.price} >{traits[0]?.value}</div>
                 </div>

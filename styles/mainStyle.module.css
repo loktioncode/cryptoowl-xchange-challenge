@@ -1,14 +1,20 @@
 .main{
-    height: 40vh;
+    /* height: 40vh; */
     color: #eaeaea;
     background-color: #23282e ;
     padding-top: 20px;
+    position: sticky;
+    top: 0px;
+    overflow-y: hidden;
+    z-index: 1;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-bottom: 20px;
 }
 
 .mainContent{
     display: flex;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgb(48, 48, 48);
+   
     padding-left: 30px;
 }
 
@@ -42,7 +48,7 @@
 }
 
 .title{
-    font-size: 96px;
+    font-size: 76px;
     font-weight: 800;
     color: rgb(139, 139, 139);
 }
@@ -99,5 +105,18 @@
 .ownerLink > img{
    height: 100% !important;
    width: 100% !important;
-   /* color: red; */
+
 }
+
+/* .is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+    background-color: #ffffff !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 0px;
+    padding-bottom: 0px;
+} */

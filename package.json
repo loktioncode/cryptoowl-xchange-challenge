@@ -10,6 +10,7 @@
     "@3rdweb/sdk": "^1.36.10",
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",
+    "@nftlabs/sdk": "^1.7.0",
     "@usedapp/core": "^0.9.1",
     "axios": "^0.25.0",
     "daisyui": "^1.24.3",

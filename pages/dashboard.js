@@ -20,8 +20,6 @@ export default function Dashboard() {
 
   useEffect(() => {
 
-    // Prefetch the dashboard page
-    // router.prefetch('/dashboard')
     const getMyNfts = async () => {
       const openseaData = await axios.get(`https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=${process.env.NEXT_PUBLIC_NFT_MODULE_ADDRESS}`)
       // alert(openseaData.data.assets)
@@ -30,6 +28,7 @@ export default function Dashboard() {
 
     return getMyNfts()
   }, [])
+
 
 
   // If a wallet is connected, show disconnect and switch network options
@@ -42,7 +41,7 @@ export default function Dashboard() {
           {
             nftData.length > 0 && (
               <div data-theme="dark">
-                <Main nftListData={nftData} selectedNft={selectedNft} />
+                <Main nftListData={nftData} selectedNft={selectedNft} onScroll={()=>alert("HALALALA")} />
                 <NftList nftListData={nftData} setSelectedNft={setSelectedNft} />
               </div>
             )
