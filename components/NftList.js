@@ -3,15 +3,15 @@ import React, { useState, Fragment } from 'react';
 import CollectionCard from './CollectionCard';
 import Link from 'next/link'
 import NftListStyle from '../styles/nftListStyle.module.css'
-
+import LoadingPageContent from './LoadingPageContent'
 
 const NftList = (props) => {
-   
+
     return (
 
         <div className={NftListStyle.nftListStyle}>
             {props.nftListData.length === 0 ? (
-                <Fragment>loading..</Fragment>
+                <LoadingPageContent />
             ) : (
                 props.nftListData.map(nft => (
                     <div onClick={() => props.setSelectedNft(nft.token_id)}>

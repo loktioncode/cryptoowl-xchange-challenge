@@ -7,12 +7,7 @@ export default function CollectionCard({ id, name, traits, image }) {
     return (
         // apply style from styles
         <div className={collectionCard.CollectionCard}>
-            {/* <Image
-                src={image} // Route of the image file
-                height={400}
-                width={400}
-                alt="Your Name"
-            /> */}
+        
             <img
              src={image} // Route of the image file
            className={collectionCard.nftImage}

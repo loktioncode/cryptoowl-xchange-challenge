@@ -5,7 +5,9 @@ module.exports = {
             'tailwindui.com',
             'images.unsplash.com',
             'storage.googleapis.com',
-            'img.icons8.com'
+            'img.icons8.com',
+            'picsum.photos',
+            'source.unsplash.com'
         ],
 
     },

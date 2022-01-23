@@ -1,11 +1,15 @@
 .main{
     height: 40vh;
+    color: #eaeaea;
+    background-color: #23282e ;
+    padding-top: 20px;
 }
 
 .mainContent{
     display: flex;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgb(48, 48, 48);
+    padding-left: 30px;
 }
 
 .nftHighlight{
@@ -40,12 +44,12 @@
 .title{
     font-size: 96px;
     font-weight: 800;
-    color: rgb(39, 39, 43);
+    color: rgb(139, 139, 139);
 }
 .itemNumber{
-    color: rgb(39, 39, 43);
+    color: rgb(71, 71, 75);
     font-size: 72px;
-    font-weight: 400;
+    font-weight: 600;
     align-self: center;
 }
 
@@ -89,9 +93,11 @@
     padding: 10px;
     border-radius: 50px;
     margin: 0 0 0 10px;
+  
 }
 
 .ownerLink > img{
    height: 100% !important;
    width: 100% !important;
+   /* color: red; */
 }
