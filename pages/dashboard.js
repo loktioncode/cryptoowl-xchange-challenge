@@ -23,7 +23,7 @@ export default function Dashboard() {
     // Prefetch the dashboard page
     // router.prefetch('/dashboard')
     const getMyNfts = async () => {
-      const openseaData = await axios.get('https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x0570408Ba92aC0F8C3a19C0890f9a3829CFf4804')
+      const openseaData = await axios.get(`https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=${process.env.NEXT_PUBLIC_NFT_MODULE_ADDRESS}`)
       // alert(openseaData.data.assets)
       setNftData(openseaData.data.assets)
     }

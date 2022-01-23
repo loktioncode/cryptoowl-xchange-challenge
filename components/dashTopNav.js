@@ -5,7 +5,7 @@ import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
 
 
 const DashboardNav = (props) => {
-    const disconnectWallet = useWeb3();
+    const {disconnectWallet} = useWeb3();
     const { switchNetwork } = useSwitchNetwork();
 
     return (
@@ -52,7 +52,7 @@ const DashboardNav = (props) => {
                             <a onClick={() => switchNetwork(1)}>Switch Main Net</a>
                         </li>
                         <li>
-                            <a onClick={() => disconnectWallet} className='group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>Disconnect</a>
+                            <a onClick={disconnectWallet} className='group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>Disconnect</a>
                         </li>
                     </ul>
                 </div>

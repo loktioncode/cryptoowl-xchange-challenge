@@ -1,20 +1,20 @@
 .nftListStyle{
     cursor: pointer;
     display: flex;
-    overflow: scroll;
-    padding-top:  20px;
+    flex-wrap: wrap;
     padding-bottom: 20px;
     padding-left: 20px;
     border-bottom: 1px solid rgb(43, 43, 43);
     width:100%;
     color: #eaeaea;
     background-color: #23282e ;
+    justify-content: center;
 }
 
-.nftListStyle::-webkit-scrollbar{
+/* .nftListStyle::-webkit-scrollbar{
     background: transparent; 
 
-}
+} */
 
 .nftImage{
     width: 400px !important;
