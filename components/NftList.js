@@ -9,7 +9,7 @@ const NftList = (props) => {
 
     return (
 
-        <div className={NftListStyle.nftListStyle} onClick={() => alert("Chikugrafter")}>
+        <div className={NftListStyle.nftListStyle} onClick={() => alert("nftLIST CLICK")}>
             {props.nftListData.length === 0 ? (
                 <LoadingPageContent />
             ) : (

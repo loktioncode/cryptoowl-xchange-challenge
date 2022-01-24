@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { Fragment, useRef, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
@@ -5,24 +6,21 @@ import { LockClosedIcon } from '@heroicons/react/solid'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import NftList from '../components/NftList'
-import Main from '../components/Main'
-import Layout, { siteTitle } from '../components/layout'
 import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
 import axios from 'axios'
 
 
 export default function MetaMaskSignIn() {
+
     const { address, chainId, connectWallet, disconnectWallet } = useWeb3();
     const { switchNetwork } = useSwitchNetwork();
     const [email, setEmail] = useState("");
-    const [nftData, setNftData] = useState([]);
+
     const [selectedNft, setSelectedNft] = useState(0)
     const router = useRouter()
     const [open, setOpen] = useState(true)
-
-
     const cancelButtonRef = useRef(null)
+
 
     const alert = <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" initialFocus={cancelButtonRef} onClose={setOpen}>
@@ -102,15 +100,9 @@ export default function MetaMaskSignIn() {
         router.prefetch('/dashboard')
     }, [])
 
-
     // If a wallet is connected, show disconnect and switch network options
     if (address) {
-
-        return (
-            <>
-                {alert}
-            </>
-        )
+        router.push('/dashboard')
     }
 
 

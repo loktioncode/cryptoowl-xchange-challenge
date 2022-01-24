@@ -1,17 +1,27 @@
-
+import React, { useContext, } from 'react';
+import { NftContext } from './config/state';
 import ProfilePicture from './avatar'
 import Image from 'next/image'
-import NftList from './NftList'
-import { useState, useEffect } from 'react'
-import Loader from './loader'
+import LoadingPageContent from './LoadingPageContent'
+import ShowCaseStyle from '../styles/showcase.module.css'
+
+
+
+import CollectionCard from './CollectionCard';
+import Link from 'next/link'
+import NftListStyle from '../styles/nftListStyle.module.css'
+
+
+
+
+
 export default function ShowcaseCollection() {
 
-  const [selectedNft, setSelectedNft] = useState(0)
-  const [nftData, setNftData] = useState([]);
-
+  const [nftData] = useContext(NftContext);
 
   return (
     <>
+
       <section className="p-4 lg:p-8 dark-custom" >
         <div className="container mx-auto space-y-12">
           <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
@@ -36,19 +46,42 @@ export default function ShowcaseCollection() {
               <button type="button" className="self-start">Action</button>
             </div>
           </div>
-         
-        {/* // (nftData != null && nftData != 'undefined' ) ? <Loader /> : <NftList nftListData={nftData} setSelectedNft={setSelectedNft} page={'home'}/>  */}
-     
 
-      {
-        <iframe
-        src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0x806B302a8B2Ad69273247804dD9B647b1dCe64df&chainId=4"
-        width="350px"
-        height="500px"
-        className='auctionWidget dark-custom'
-        frameborder="0"
-      />
-      }
+          <div >
+            <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">Collect yours today and donate to the cause.</p>
+            <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Limited Hand Drawn Afro Inspired Art</h1>
+            <div className={ShowCaseStyle.nftClaims}>
+              {/* <div className={ShowCaseStyle.auctionWidget} >
+                <iframe
+                  src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0x806B302a8B2Ad69273247804dD9B647b1dCe64df&chainId=4"
+                  width="300px"
+                  height="500px"  
+                  frameborder="0"
+                />
+              </div>
+              <div className={ShowCaseStyle.auctionWidget}>
+                <iframe
+                  src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0x806B302a8B2Ad69273247804dD9B647b1dCe64df&chainId=4"
+                  width="300px"
+                  height="500px"
+                  frameborder="0"
+                />
+              </div> */}
+
+              <div className={ShowCaseStyle.auctionWidget}>
+                <iframe
+                  src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0x806B302a8B2Ad69273247804dD9B647b1dCe64df&chainId=4"
+                  width="300px"
+                  height="500px"
+                  frameborder="0"
+                />
+              </div>
+
+
+            </div>
+
+          </div>
+
         </div>
       </section>
 
@@ -193,7 +226,7 @@ export default function ShowcaseCollection() {
           </div>
         </div>
       </section>
-
     </>
+
   )
 }

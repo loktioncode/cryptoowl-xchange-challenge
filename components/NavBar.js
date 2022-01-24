@@ -6,7 +6,7 @@ import NavButton from "./NavButton";
 const NavBar = props => (
 
   <>
-    <div className="navbar sticky top-0 shadow-lg bg-neutral text-neutral-content " >
+    <div className="navbar sticky z-0 top-0 shadow-lg bg-neutral text-neutral-content " >
       <div class="px-2 mx-2 navbar-start">
         <span class="text-lg font-bold">
           CRYPTOOWL

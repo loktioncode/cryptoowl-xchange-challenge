@@ -19,8 +19,8 @@ const navButtons = [
         // icon: <FontAwesomeIcon icon={faMapMarkerAlt} />
     },
     {
-        label: "Contact",
-        path: "/contact",
+        label: "Market Place",
+        path: "/market",
         // icon: <FontAwesomeIcon icon={faShoppingCart} />
     },
     {

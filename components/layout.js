@@ -42,7 +42,7 @@ export default function Layout({ children, login }) {
         (asPath === "/dashboard") ? <></> : <NavBar navButtons={navButtons} colorSwitch={button} />
       }
 
-      <main className=''>{children}</main>
+      <main className='dark-custom'>{children}</main>
       <Footer />
     </div>
 

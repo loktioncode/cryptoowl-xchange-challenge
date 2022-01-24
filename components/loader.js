@@ -6,7 +6,7 @@ function Loader(props) {
 
         <div className="dark-custom flex flex-row overflow-hidden shadow-sm lg:flex-column">
             <div className="mt-16 flex items-center justify-center flex-1 ">
-                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-indigo-600"></div><span>Connect your Wallet</span>
+                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-indigo-600"></div>
 
             </div>
 
