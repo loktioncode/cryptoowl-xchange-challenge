@@ -15,7 +15,14 @@ const NftList = (props) => {
             ) : (
                 props.nftListData.map(nft => (
                     <div onClick={() => props.setSelectedNft(nft.token_id)}>
-                        <CollectionCard key={nft.id} name={nft.name} id={nft.token_id} image={(nft.image_url === null) ? '/images/1.jpg' : nft.image_url} traits={nft.traits} />
+                        <iframe
+                            src="https://cloudflare-ipfs.com/ipfs/bafybeigfwpsphinbvdbkdeamxz2pcex5pe5liuyjavjjwnsc5xrgususci?contract=0x877253AA0180b476932A022122a1e2268b3f7c8f&chainId=4&listingId=${nft.token_id}"
+                            width="350px"
+                            height="500px"
+                            className='auctionWidget dark-custom'
+                            frameborder="0"
+                        />
+      
                     </div>
                 ))
 
@@ -25,4 +32,4 @@ const NftList = (props) => {
 
 }
 
-export default NftList;
+export default MarketPlaceList;

@@ -1,9 +1,15 @@
 
 import ProfilePicture from './avatar'
 import Image from 'next/image'
-
-
+import NftList from './NftList'
+import { useState, useEffect } from 'react'
+import Loader from './loader'
 export default function ShowcaseCollection() {
+
+  const [selectedNft, setSelectedNft] = useState(0)
+  const [nftData, setNftData] = useState([]);
+
+
   return (
     <>
       <section className="p-4 lg:p-8 dark-custom" >
@@ -30,22 +36,22 @@ export default function ShowcaseCollection() {
               <button type="button" className="self-start">Action</button>
             </div>
           </div>
-          <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-            <div className="flex items-center justify-center flex-1 bg-indigo-600">
-              <img src="assets/svg/copycode.svg" alt="" className="p-8 h-60 bg-coolGray-500"></img>
-            </div>
-            <div className="flex flex-col justify-center flex-1 px-6 py-12 bg-coolGray-50">
-              <span className="text-xs uppercase text-coolGray-600">Join, it's free</span>
-              <h2 className="text-3xl font-bold">We're not reinventing the wheel</h2>
-              <p className="my-6 text-coolGray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
-              <button type="button" className="self-start">Action</button>
-            </div>
-          </div>
+         
+        {/* // (nftData != null && nftData != 'undefined' ) ? <Loader /> : <NftList nftListData={nftData} setSelectedNft={setSelectedNft} page={'home'}/>  */}
+     
+
+      {
+        <iframe
+        src="https://cloudflare-ipfs.com/ipfs/bafybeic4ujkaaga3sklcjehvjnzssmur32r2njhttmnyokputtlgwh6q4e?contract=0x806B302a8B2Ad69273247804dD9B647b1dCe64df&chainId=4"
+        width="350px"
+        height="500px"
+        className='auctionWidget dark-custom'
+        frameborder="0"
+      />
+      }
         </div>
       </section>
 
-      {/* //section for user to mind nft */}
-      
 
       {/* our team */}
       <section className="pt-16 py-6 bg-coolGray-500 text-coolGray-800 dark-custom">

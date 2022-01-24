@@ -11,16 +11,16 @@ export const MintNftButton = () => {
         alert("minting")
         // setLoading(true);
 
-        // await fetch("/api/mint_sword", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         account,
-        //         type: "gold",
-        //     }),
-        // });
+        await fetch("/api/mint_sword", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                account,
+                type: "gold",
+            }),
+        });
 
         setLoading(false);
        

@@ -6,12 +6,13 @@ import Main from '../components/Main'
 import Layout from '../components/layout'
 import DashboardNav from '../components/dashTopNav'
 import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
+
 import axios from 'axios'
 
 
 export default function Dashboard() {
-  const { address, chainId } = useWeb3();
 
+  const { address, chainId } = useWeb3();
   const [email, setEmail] = useState("");
   const [nftData, setNftData] = useState([]);
   const [selectedNft, setSelectedNft] = useState(0)
@@ -23,6 +24,7 @@ export default function Dashboard() {
     const getMyNfts = async () => {
       const openseaData = await axios.get(`https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=${process.env.NEXT_PUBLIC_NFT_MODULE_ADDRESS}`)
       // alert(openseaData.data.assets)
+      // window.sessionStorage.set('openseaData', JSON.stringify(openseaData));
       setNftData(openseaData.data.assets)
     }
 
@@ -41,7 +43,7 @@ export default function Dashboard() {
           {
             nftData.length > 0 && (
               <div data-theme="dark">
-                <Main nftListData={nftData} selectedNft={selectedNft} onScroll={()=>alert("HALALALA")} />
+                <Main nftListData={nftData} selectedNft={selectedNft} onScroll={() => alert("HALALALA")} />
                 <NftList nftListData={nftData} setSelectedNft={setSelectedNft} />
               </div>
             )
@@ -51,10 +53,9 @@ export default function Dashboard() {
       </Layout>
     )
   }
-
   return (
     <>
-      <LoadingPageContent />
+      <LoadingPageContent page={'dashboard'} />
     </>
 
   )

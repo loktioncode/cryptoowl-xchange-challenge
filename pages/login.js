@@ -21,6 +21,7 @@ export default function MetaMaskSignIn() {
     const router = useRouter()
     const [open, setOpen] = useState(true)
 
+
     const cancelButtonRef = useRef(null)
 
     const alert = <Transition.Root show={open} as={Fragment}>
@@ -64,7 +65,7 @@ export default function MetaMaskSignIn() {
                                     <div className="mt-2">
                                         <p className="text-sm text-gray-500">
                                             Are you sure you want to connect your account? All of your data will be safe on the blockchain.
-                        
+
                                         </p>
                                     </div>
                                 </div>
@@ -97,8 +98,8 @@ export default function MetaMaskSignIn() {
     </Transition.Root>;
 
 
-    useEffect(() => { 
-        router.prefetch('/dashboard')  
+    useEffect(() => {
+        router.prefetch('/dashboard')
     }, [])
 
 
@@ -143,14 +144,14 @@ export default function MetaMaskSignIn() {
                                     </button>
                                     <br></br>
                                     <button
-                                        onClick={() => connectWallet("walletlink")}
+                                        onClick={() => connectWallet("walletconnect")}
                                         type="submit"
                                         className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     >
                                         <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                             <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                                         </span>
-                                        CoinBase
+                                        Wallet Connect
                                     </button>
 
                                 </div>
@@ -159,7 +160,7 @@ export default function MetaMaskSignIn() {
                         <div>
                             <p className="mt-16 text-center text-sm text-gray-600">
                                 <Link href="/">
-                                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                    <a href="#" className="font-medium text-md text-white hover:text-indigo-500">
                                         ← Back to home
                                     </a>
                                 </Link>
