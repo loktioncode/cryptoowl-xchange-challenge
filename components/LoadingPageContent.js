@@ -12,7 +12,7 @@ function LoadingPageContent(props) {
                     <p className="mt-16 text-center text-sm text-gray-600">
                         {
                             (props.page === 'dashboard') && <Link href="/login">
-                                <a href="#" className="font-medium text-white hover:text-indigo-500">
+                                <a href="#" className="font-medium text-white hover:text-blue-500">
                                     ← Go to Login Page
                                 </a>
                             </Link>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Custom404() {
   return (
-    <div class="bg-indigo-600 relative overflow-hidden h-screen">
+    <div class="bg-blue-600 relative overflow-hidden h-screen">
 
 
       <div class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">

@@ -53,8 +53,8 @@ export default function MetaMaskSignIn() {
                     <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                         <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div className="sm:flex sm:items-start">
-                                <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
-                                    <ExclamationIcon className="h-6 w-6 text-indigo-600" aria-hidden="true" />
+                                <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                    <ExclamationIcon className="h-6 w-6 text-blue-600" aria-hidden="true" />
                                 </div>
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
@@ -72,7 +72,7 @@ export default function MetaMaskSignIn() {
                         <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                             <button
                                 type="button"
-                                className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                                className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                                 onClick={() => setOpen(false)}
                             >
                                 Cancel
@@ -80,7 +80,7 @@ export default function MetaMaskSignIn() {
                             <Link href="/dashboard">
                                 <button
                                     type="button"
-                                    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                                     onClick={() => setOpen(false)}
                                     ref={cancelButtonRef}
                                 >
@@ -115,22 +115,22 @@ export default function MetaMaskSignIn() {
                     <Link href="/">
                         <img
                             className="mb-12 h-12 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
                             alt="Workflow"
                         />
                     </Link>
                     <div class="w-full max-w-lg">
                         <div class="leading-loose">
 
-                            <div class="max-w-sm p-10 m-auto bg-white bg-opacity-5 rounded shadow-xl shadow-indigo-500/50">
+                            <div class="max-w-sm p-10 m-auto bg-white bg-opacity-5 rounded shadow-xl shadow-blue-500/50">
                                 <div>
                                     <button
                                         onClick={() => connectWallet("injected")}
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                     >
                                         <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                                            <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                                            <LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400" aria-hidden="true" />
                                         </span>
                                         MetaMask Sign in
                                     </button>
@@ -138,10 +138,10 @@ export default function MetaMaskSignIn() {
                                     <button
                                         onClick={() => connectWallet("walletconnect")}
                                         type="submit"
-                                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                     >
                                         <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                                            <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                                            <LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400" aria-hidden="true" />
                                         </span>
                                         Wallet Connect
                                     </button>
@@ -152,7 +152,7 @@ export default function MetaMaskSignIn() {
                         <div>
                             <p className="mt-16 text-center text-sm text-gray-600">
                                 <Link href="/">
-                                    <a href="#" className="font-medium text-md text-white hover:text-indigo-500">
+                                    <a href="#" className="font-medium text-md text-white hover:text-blue-500">
                                         ← Back to home
                                     </a>
                                 </Link>

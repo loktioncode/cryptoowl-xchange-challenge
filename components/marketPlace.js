@@ -21,6 +21,7 @@ const NftList = (props) => {
                             height="500px"
                             className='auctionWidget dark-custom'
                             frameborder="0"
+                            darkMode="true"
                         />
                     </div>
                 ))
