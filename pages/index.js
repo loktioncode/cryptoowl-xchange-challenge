@@ -5,20 +5,12 @@ import Link from 'next/link'
 import Hero from '../components/hero'
 import ShowcaseCollection from '../components/showcase'
 
-// import NProgress from 'nprogress'
-
-// Router.events.on('routeChangeStart', (url) => {
-//   console.log(`Loading: ${url}`)
-//   NProgress.start()
-// })
-// Router.events.on('routeChangeComplete', () => NProgress.done())
-// Router.events.on('routeChangeError', () => NProgress.done())
-
 
 
 export default function Home() {
   return (
     <Layout home>
+        <h1> INDEX</h1>
     
       <Head>
         <title>{siteTitle}</title>
