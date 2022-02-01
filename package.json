@@ -11,8 +11,10 @@
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",
     "@nftlabs/sdk": "^1.7.0",
+    "@tailwindcss/forms": "^0.4.0",
     "@usedapp/core": "^0.9.1",
     "axios": "^0.25.0",
+    "chart.js": "^3.7.0",
     "daisyui": "^1.24.3",
     "debug": "^4.3.3",
     "ethers": "^5.5.3",
@@ -22,6 +24,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.2.3",
     "react": "17.0.2",
+    "react-chartjs-2": "^4.0.1",
     "react-dom": "17.0.2",
     "react-responsive-carousel": "^3.2.22",
     "web3": "^1.7.0"

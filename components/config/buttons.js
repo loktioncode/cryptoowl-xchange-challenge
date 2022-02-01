@@ -14,20 +14,11 @@ const navButtons = [
         // icon: <FontAwesomeIcon icon={faCompass} />
     },
     {
-        label: "About Us",
-        path: "/about",
+        label: "Charts",
+        path: "/chart",
         // icon: <FontAwesomeIcon icon={faMapMarkerAlt} />
-    },
-    {
-        label: "Market Place",
-        path: "/market",
-        // icon: <FontAwesomeIcon icon={faShoppingCart} />
-    },
-    {
-        label: "Login",
-        path: "/login",
-        // icon: <FontAwesomeIcon icon={faUser} />
     }
+   
 ];
 
 export default navButtons;

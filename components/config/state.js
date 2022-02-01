@@ -1,6 +1,6 @@
 import React,{useState, createContext} from 'react';
 
-//In this folder is were we manage Cars context so it can be used in our App
+//In this folder is were we manage context so it can be used in our App
 export const NftContext = createContext();
 
 
