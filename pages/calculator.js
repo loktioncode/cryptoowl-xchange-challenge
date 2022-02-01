@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useRouter } from 'next/router'
-import DropList from "../components/DropList";
+import Layout, { siteTitle } from '../components/layout'
 
-const DappWithContract = () => {
 
-  const { address } = useWeb3();
+
+export default function Charts() {
+
+
 
   return (
-    < >
-      <div>
- 
-      </div>
-    </>
+    <Layout home>
+     
+    </ Layout>
   );
-};
-
-export default DappWithContract;
+}
