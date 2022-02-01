@@ -14,7 +14,7 @@ const initialState = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.1)',
       hoverBorderColor: 'rgba(255,99,132,0.1)',
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [65, 59, 80]
     }
   ]
 };
@@ -26,15 +26,20 @@ class Graph extends React.Component {
     this.setState(initialState);
   }
 
+
   componentDidMount() {
     var _this = this;
 
-    setInterval(function () {
+   setInterval(() => {
       var oldDataSet = _this.state.datasets[0];
       var newData = [];
 
       for (var x = 0; x < _this.state.labels.length; x++) {
-        newData.push(Math.floor(Math.random() * 100));
+        // const res = await fetch(
+        //   `http://api.exchangeratesapi.io/latest?access_key=a6f2f95fbb352f66ae967a3322c9b2c8&base=EUR`
+        // );
+        // const { rates } = res.json();
+        // newData.push(Math.floor(rates[toCurrency]));
       }
 
       var newDataSet = {
@@ -67,7 +72,7 @@ class Graph extends React.Component {
 export default () => (
   <Layout>
     <div>
-      <h2>You can even make crazy graphs like this!</h2>
+      <h2>Not yet complete</h2>
 
       <Graph />
     </div>
